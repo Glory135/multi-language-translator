@@ -1,0 +1,45 @@
+& .top {
+    width: 90%;
+    height: 100%;
+    @include position(center, space-between);
+
+    & .logo-container {
+        height: 100%;
+        width: auto;
+        @include position;
+
+        & img {
+            height: 50%;
+            width: auto;
+
+            &.logo {
+                @include sm {
+                    display: none;
+                }
+            }
+
+            &.logosm {
+                display: none;
+
+                @include sm {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    & .nav {
+        & ul {
+            display: flex;
+            gap: 15px;
+            list-style-type: none;
+
+            & li {
+                @include hover-animation($primary);
+                & .linkSign{
+                    font-size: small;
+                }
+            }
+        }
+    }
+}

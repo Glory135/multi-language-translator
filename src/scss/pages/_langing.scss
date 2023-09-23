@@ -1,0 +1,66 @@
+& .langing-page {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    & .hero {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row-reverse;
+        @include sm{
+            @include position(flex-start, center, row)
+        }
+
+        & .hero-text {
+            flex: 1;
+            @include position;
+            flex-direction: column;
+            @include sm{
+                padding: 5px;
+                margin-top: 30px;
+            }
+
+            & h1 {
+                font-size: 40px;
+                @include text-gradient;
+                @include sm{
+                    font-size: 30px;
+                }
+            }
+
+            & p {
+                width: 100%;
+                font-size: 17px;
+                line-height: 20px;
+                font-weight: lighter;
+                color: $light_text;
+                @include sm{
+                    font-size: 15px;
+                }
+            }
+
+            & .btn-container{
+                margin-top: 15px;
+                width: 100%;
+                & .btn{
+                    @include position;
+                    gap: 10px;
+                }
+            }
+        }
+
+        & .hero-img-container {
+            flex: 1;
+            background-image: url('./assets/lang-ill.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include sm {
+                display: none;
+            }
+        }
+    }
+}

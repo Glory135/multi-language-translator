@@ -1,0 +1,99 @@
+@import './scss/scssComponents/variables';
+@import './scss/scssComponents/animation';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: 'josefin Sans', sans-serif;
+	font-size: 15px;
+	transition: 0.2s;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+.Link {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	background-color: $secondary;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	cursor: pointer;
+	&:active{
+		transform: scale(0.9);
+		transition: 0.1s;
+	}
+}
+button.big {
+	padding: 20px 35px;
+}
+button.small {
+	padding: 10px 20px;
+}
+.main {
+	width: 100vw;
+	min-height: 100vh;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	padding: 120px 24px 160px 24px;
+	pointer-events: none;
+
+	& .gradient {
+		height: fit-content;
+		z-index: 3;
+		width: 100%;
+		max-width: 640px;
+		background-image: radial-gradient(at 27% 37%,
+				rgb(17, 0, 255) 0px,
+				transparent 0%),
+			radial-gradient(at 97% 21%, $primary 0px, transparent 50%),
+			radial-gradient(at 52% 99%, $secondary 0px, transparent 50%),
+			radial-gradient(at 10% 29%, $light_primary 0px, transparent 50%),
+			radial-gradient(at 97% 96%, #7c2bac 0px, transparent 20%),
+			radial-gradient(at 33% 50%, rgb(136, 161, 219) 0px, transparent 50%),
+			radial-gradient(at 79% 53%, rgb(253, 97, 142) 0px, transparent 50%);
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		filter: blur(50px) saturate(100%);
+		top: 80px;
+		opacity: 0.15;
+	}
+}
+
+main.app {
+	width: 100%;
+	min-height: 100vh;
+	height: auto;
+	// background-color: $bg;
+	position: relative;
+	z-index: 4;
+	overflow-x: hidden;
+
+	& .top-container {
+		width: 100%;
+		height: 10vh;
+		@include position;
+		background-color: white;
+		box-shadow: $shadow-sm;
+		// component
+		@import './scss/components/topbar';
+	}
+
+	// pages
+	@import './scss/pages/langing';
+
+}
