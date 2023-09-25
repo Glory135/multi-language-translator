@@ -47,6 +47,8 @@ select {
 	border-bottom: 1px solid $light_secondary;
 	padding: 5px;
 	background-color: transparent;
+	color: $light_text;
+	font-weight: bold;
 
 	&:focus {
 		outline: none;
