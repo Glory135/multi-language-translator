@@ -56,7 +56,7 @@ const TranslateText = () => {
             <div className="translateFrom">
                 <div
                     style={{
-                        display: type === 'audio' ? 'flex' : 'none'
+                        display: type === 'text' ? 'flex' : 'none'
                     }}
                     className="textfrom">
                     <label htmlFor='from'>
@@ -69,7 +69,7 @@ const TranslateText = () => {
 
                 <div
                     style={{
-                        display: type === 'text' ? 'flex' : 'none',
+                        display: type === 'audio' ? 'flex' : 'none',
                     }}
                     className="audiofrom">
                     <div className="status">

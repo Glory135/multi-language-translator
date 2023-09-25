@@ -448,6 +448,7 @@ main.app .translate-text-page .translateTo {
 @media (max-width: 700px) {
   main.app .translate-text-page .translateTo {
     flex-direction: column;
+    gap: 20px;
   }
 }
 main.app .translate-text-page .translateTo .toItem_comtainer {

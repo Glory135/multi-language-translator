@@ -137,6 +137,7 @@
 
         @include sm {
             flex-direction: column;
+            gap: 20px;
         }
 
         & .toItem_comtainer {
