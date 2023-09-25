@@ -30,17 +30,29 @@ button {
 	border-radius: 3px;
 	color: white;
 	cursor: pointer;
-	&:active{
-		transform: scale(0.9);
-		transition: 0.1s;
-	}
+	@include clickScale;
 }
+
 button.big {
 	padding: 20px 35px;
 }
+
 button.small {
 	padding: 10px 20px;
 }
+
+select {
+	// width: 50%;
+	border: none;
+	border-bottom: 1px solid $light_secondary;
+	padding: 5px;
+	background-color: transparent;
+
+	&:focus {
+		outline: none;
+	}
+}
+
 .main {
 	width: 100vw;
 	min-height: 100vh;
@@ -78,7 +90,6 @@ main.app {
 	width: 100%;
 	min-height: 100vh;
 	height: auto;
-	// background-color: $bg;
 	position: relative;
 	z-index: 4;
 	overflow-x: hidden;
@@ -89,11 +100,16 @@ main.app {
 		@include position;
 		background-color: white;
 		box-shadow: $shadow-sm;
+		border-radius: 0 0 20px 20px;
+		background-color: rgba(255, 255, 255, 0.85);
+		backdrop-filter: saturate(180%) blur(10px);
+
 		// component
 		@import './scss/components/topbar';
 	}
 
 	// pages
-	@import './scss/pages/langing';
+	@import './scss/pages/landing';
+	@import './scss/pages/textTranslate';
 
 }

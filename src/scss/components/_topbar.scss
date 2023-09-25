@@ -2,30 +2,39 @@
     width: 90%;
     height: 100%;
     @include position(center, space-between);
+    @include sm{
+        width: 85%;
+    }
 
     & .logo-container {
         height: 100%;
         width: auto;
         @include position;
 
-        & img {
+        & .Link {
             height: 50%;
             width: auto;
 
-            &.logo {
-                @include sm {
-                    display: none;
+            & img {
+                height: 100%;
+                width: auto;
+
+                &.logo {
+                    @include sm {
+                        display: none;
+                    }
                 }
-            }
 
-            &.logosm {
-                display: none;
+                &.logosm {
+                    display: none;
 
-                @include sm {
-                    display: block;
+                    @include sm {
+                        display: block;
+                    }
                 }
             }
         }
+
     }
 
     & .nav {
@@ -35,8 +44,9 @@
             list-style-type: none;
 
             & li {
-                @include hover-animation($primary);
-                & .linkSign{
+                @include hover-animation(#8834b97e);
+
+                & .linkSign {
                     font-size: small;
                 }
             }

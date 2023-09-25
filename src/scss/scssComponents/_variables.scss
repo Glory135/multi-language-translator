@@ -34,18 +34,61 @@ $bg: #edf9e7;
 	padding: 5px;
 	font-weight: bold;
 	cursor: pointer;
+
 	&::after {
 		position: absolute;
 		left: 0;
-		bottom: -2px;
+		bottom: 5px;
 		content: '';
 		width: 0;
 		height: 7px;
 		background-color: $line-color;
 		border-radius: 5px;
 	}
+
 	&:hover::after {
 		width: 100%;
+	}
+}
+
+@mixin clickScale() {
+	&:active {
+		transform: scale(.9);
+		transition: .1s;
+	}
+}
+@mixin hoverScale() {
+	&:hover {
+		transform: scale(1.1);
+		transition: .1s;
+	}
+}
+
+@mixin scrollBar($barcolor: $light_primary, $barhover: $primary) {
+	&::-webkit-scrollbar {
+		width: 10px;
+		cursor: pointer;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $bg;
+		cursor: pointer;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		box-shadow: inset 0 0 6px rgba(0,0,0,.3);;
+		border-radius: 5px;
+		background-color: $barcolor;
+
+		&:hover {
+			background-color: $barhover;
+		}
+	}
+
+	/* Customize the scrollbar corner */
+	&::-webkit-scrollbar-corner {
+		background-color: #f1f1f1;
+		/* Background color of the scrollbar corner */
 	}
 }
 
@@ -62,21 +105,25 @@ $breakpoints: (
 		@content;
 	}
 }
+
 @mixin sm {
 	@media (max-width: map-get($breakpoints, 'sm')) {
 		@content;
 	}
 }
+
 @mixin md {
 	@media (max-width: map-get($breakpoints, 'md')) {
 		@content;
 	}
 }
+
 @mixin lg {
 	@media (max-width: map-get($breakpoints, 'lg')) {
 		@content;
 	}
 }
+
 @mixin xl {
 	@media (max-width: map-get($breakpoints, 'xl')) {
 		@content;

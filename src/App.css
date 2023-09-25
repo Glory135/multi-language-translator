@@ -79,6 +79,16 @@ button.small {
   padding: 10px 20px;
 }
 
+select {
+  border: none;
+  border-bottom: 1px solid rgb(255, 132, 87);
+  padding: 5px;
+  background-color: transparent;
+}
+select:focus {
+  outline: none;
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -121,6 +131,10 @@ main.app .top-container {
   flex-direction: row;
   background-color: white;
   box-shadow: 1px 1px 2px 2px rgba(211, 211, 211, 0.307);
+  border-radius: 0 0 20px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
 }
 main.app .top-container .top {
   width: 90%;
@@ -130,6 +144,11 @@ main.app .top-container .top {
   justify-content: space-between;
   flex-direction: row;
 }
+@media (max-width: 700px) {
+  main.app .top-container .top {
+    width: 85%;
+  }
+}
 main.app .top-container .top .logo-container {
   height: 100%;
   width: auto;
@@ -138,20 +157,24 @@ main.app .top-container .top .logo-container {
   justify-content: center;
   flex-direction: row;
 }
-main.app .top-container .top .logo-container img {
+main.app .top-container .top .logo-container .Link {
   height: 50%;
   width: auto;
 }
+main.app .top-container .top .logo-container .Link img {
+  height: 100%;
+  width: auto;
+}
 @media (max-width: 700px) {
-  main.app .top-container .top .logo-container img.logo {
+  main.app .top-container .top .logo-container .Link img.logo {
     display: none;
   }
 }
-main.app .top-container .top .logo-container img.logosm {
+main.app .top-container .top .logo-container .Link img.logosm {
   display: none;
 }
 @media (max-width: 700px) {
-  main.app .top-container .top .logo-container img.logosm {
+  main.app .top-container .top .logo-container .Link img.logosm {
     display: block;
   }
 }
@@ -169,11 +192,11 @@ main.app .top-container .top .nav ul li {
 main.app .top-container .top .nav ul li::after {
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: 5px;
   content: "";
   width: 0;
   height: 7px;
-  background-color: #7c2bac;
+  background-color: rgba(136, 52, 185, 0.4941176471);
   border-radius: 5px;
 }
 main.app .top-container .top .nav ul li:hover::after {
@@ -182,12 +205,12 @@ main.app .top-container .top .nav ul li:hover::after {
 main.app .top-container .top .nav ul li .linkSign {
   font-size: small;
 }
-main.app .langing-page {
+main.app .landing-page {
   width: 100%;
   min-height: 100vh;
   height: auto;
 }
-main.app .langing-page .hero {
+main.app .landing-page .hero {
   width: 100%;
   height: auto;
   min-height: 100vh;
@@ -195,14 +218,14 @@ main.app .langing-page .hero {
   flex-direction: row-reverse;
 }
 @media (max-width: 700px) {
-  main.app .langing-page .hero {
+  main.app .landing-page .hero {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: row;
   }
 }
-main.app .langing-page .hero .hero-text {
+main.app .landing-page .hero .hero-text {
   flex: 1;
   display: flex;
   align-items: center;
@@ -211,12 +234,12 @@ main.app .langing-page .hero .hero-text {
   flex-direction: column;
 }
 @media (max-width: 700px) {
-  main.app .langing-page .hero .hero-text {
+  main.app .landing-page .hero .hero-text {
     padding: 5px;
     margin-top: 30px;
   }
 }
-main.app .langing-page .hero .hero-text h1 {
+main.app .landing-page .hero .hero-text h1 {
   font-size: 40px;
   background: #7c2bac;
   background: linear-gradient(to right, #7c2bac 0%, rgb(255, 103, 47) 81%);
@@ -224,11 +247,11 @@ main.app .langing-page .hero .hero-text h1 {
   -webkit-text-fill-color: transparent;
 }
 @media (max-width: 700px) {
-  main.app .langing-page .hero .hero-text h1 {
+  main.app .landing-page .hero .hero-text h1 {
     font-size: 30px;
   }
 }
-main.app .langing-page .hero .hero-text p {
+main.app .landing-page .hero .hero-text p {
   width: 100%;
   font-size: 17px;
   line-height: 20px;
@@ -236,22 +259,22 @@ main.app .langing-page .hero .hero-text p {
   color: #a8a8a8;
 }
 @media (max-width: 700px) {
-  main.app .langing-page .hero .hero-text p {
+  main.app .landing-page .hero .hero-text p {
     font-size: 15px;
   }
 }
-main.app .langing-page .hero .hero-text .btn-container {
+main.app .landing-page .hero .hero-text .btn-container {
   margin-top: 15px;
   width: 100%;
 }
-main.app .langing-page .hero .hero-text .btn-container .btn {
+main.app .landing-page .hero .hero-text .btn-container .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 10px;
 }
-main.app .langing-page .hero .hero-img-container {
+main.app .landing-page .hero .hero-img-container {
   flex: 1;
   background-image: url("./assets/lang-ill.svg");
   background-position: center;
@@ -259,7 +282,232 @@ main.app .langing-page .hero .hero-img-container {
   background-repeat: no-repeat;
 }
 @media (max-width: 700px) {
-  main.app .langing-page .hero .hero-img-container {
+  main.app .landing-page .hero .hero-img-container {
     display: none;
   }
+}
+main.app .translate-text-page {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+main.app .translate-text-page .heading {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 10px;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .heading {
+    width: 90%;
+  }
+}
+main.app .translate-text-page .heading .first {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main.app .translate-text-page .heading .first .text {
+  font-size: 20px;
+  background: rgb(255, 103, 47);
+  background: linear-gradient(to right, rgb(255, 103, 47) 0%, #b292c4 81%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .heading .first .text {
+    font-size: 17px;
+  }
+}
+main.app .translate-text-page .heading .audio-btn-container .audio-btn,
+main.app .translate-text-page .heading .audio-btn-container .text-btn {
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+}
+main.app .translate-text-page .heading .audio-btn-container .audio-btn:hover,
+main.app .translate-text-page .heading .audio-btn-container .text-btn:hover {
+  transform: scale(1.05);
+}
+main.app .translate-text-page .heading .audio-btn-container .audio-btn:active,
+main.app .translate-text-page .heading .audio-btn-container .text-btn:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+main.app .translate-text-page .heading .audio-btn-container .text-btn {
+  background-color: #7c2bac;
+}
+main.app .translate-text-page .translateFrom {
+  width: 100%;
+}
+main.app .translate-text-page .translateFrom .textfrom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-direction: column;
+}
+main.app .translate-text-page .translateFrom .textfrom label {
+  width: 60%;
+  color: #a8a8a8;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .translateFrom .textfrom label {
+    width: 90%;
+  }
+}
+main.app .translate-text-page .translateFrom .textfrom textarea {
+  min-width: 60%;
+  max-width: 90%;
+  width: auto;
+  max-height: 30vh;
+  min-height: 30vh;
+  font-size: 18px;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  /* Customize the scrollbar corner */
+}
+main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollbar-track {
+  background-color: #edf9e7;
+  cursor: pointer;
+}
+main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #b292c4;
+}
+main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #7c2bac;
+}
+main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+  /* Background color of the scrollbar corner */
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .translateFrom .textfrom textarea {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+main.app .translate-text-page .translateFrom .textfrom textarea:focus {
+  outline: none;
+}
+main.app .translate-text-page .translateFrom .audiofrom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+main.app .translate-text-page .translateFrom .audiofrom .status {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 15px;
+  color: #a8a8a8;
+}
+main.app .translate-text-page .translateFrom .audiofrom .mic-container {
+  margin: 20px;
+  margin-top: 0;
+  padding: 40px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+main.app .translate-text-page .translateFrom .audiofrom .mic-container:hover {
+  transform: scale(1.1);
+  transition: 0.1s;
+}
+main.app .translate-text-page .translateFrom .audiofrom .mic-container .recmic {
+  font-size: 50px;
+  color: #b292c4;
+}
+main.app .translate-text-page .translateTo {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .translateTo {
+    flex-direction: column;
+  }
+}
+main.app .translate-text-page .translateTo .toItem_comtainer {
+  flex: 1;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .translateTo .toItem_comtainer {
+    width: 100%;
+  }
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItemTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 10px;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItemTop select {
+  width: 50%;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItemTop .speaker {
+  cursor: pointer;
+  color: #7c2bac;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem {
+  width: 100%;
+  height: 40vh;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow-y: scroll;
+  padding: 5px;
+  font-size: 18px;
+  line-height: 20px;
+  /* Customize the scrollbar corner */
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-track {
+  background-color: #edf9e7;
+  cursor: pointer;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #b292c4;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-thumb:hover {
+  background-color: #7c2bac;
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+  /* Background color of the scrollbar corner */
 }/*# sourceMappingURL=App.css.map */

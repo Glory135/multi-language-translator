@@ -1,0 +1,182 @@
+& .translate-text-page {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    @include position(center, flex-start, column);
+    gap: 20px;
+
+    & .heading {
+        width: 70%;
+        @include position(center, space-between);
+        margin-top: 10px;
+
+        @include sm {
+            width: 90%;
+        }
+
+        & .first {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & .text {
+                font-size: 20px;
+                @include text-gradient($secondary, $light_primary);
+
+                @include sm {
+                    font-size: 17px;
+                }
+            }
+        }
+
+
+        & .audio-btn-container {
+
+            & .audio-btn,
+            .text-btn {
+                display: flex;
+                gap: 20px;
+                border-radius: 10px;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                @include clickScale;
+            }
+
+            & .text-btn {
+                background-color: $primary;
+            }
+        }
+    }
+
+    & .translateFrom {
+        width: 100%;
+
+        & .textfrom {
+            width: 100%;
+            @include position;
+            flex-direction: column;
+
+            & label {
+                width: 60%;
+                color: $light_text;
+
+                @include sm {
+                    width: 90%;
+                }
+            }
+
+            & textarea {
+                min-width: 60%;
+                max-width: 90%;
+                width: auto;
+                max-height: 30vh;
+                min-height: 30vh;
+                font-size: 18px;
+                color: $text;
+                border: none;
+                border-radius: 10px;
+                box-shadow: $shadow;
+                padding: 10px;
+                @include scrollBar;
+
+
+                @include sm {
+                    min-width: 90%;
+                    max-width: 90%;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        & .audiofrom {
+            width: 100%;
+            @include position(center, center, column);
+            gap: 15px;
+
+            & .status {
+                font-weight: bold;
+                font-style: italic;
+                font-size: 15px;
+                color: $light_text;
+            }
+
+            & .mic-container {
+                margin: 20px;
+                margin-top: 0;
+                padding: 40px;
+                border-radius: 50%;
+                background-color: white;
+                box-shadow: $shadow;
+                cursor: pointer;
+                @include hoverScale;
+
+                & .recmic {
+                    font-size: 50px;
+                    color: $light_primary;
+                }
+            }
+
+
+        }
+
+
+    }
+
+    & .translateTo {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        flex-wrap: wrap;
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        & .toItem_comtainer {
+            flex: 1;
+            height: auto;
+            @include position(center, center, column);
+            gap: 5px;
+
+            @include sm {
+                width: 100%;
+            }
+
+            & .toItemTop {
+                width: 100%;
+                @include position(center, space-between);
+                padding: 0 10px;
+
+                & select {
+                    width: 50%;
+                }
+
+                & .speaker {
+                    cursor: pointer;
+                    color: $primary;
+                }
+            }
+
+            & .toItem {
+                width: 100%;
+                height: 40vh;
+                border-radius: 10px;
+                box-shadow: $shadow;
+                background-color: white;
+                overflow-y: scroll;
+                padding: 5px;
+                font-size: 18px;
+                line-height: 20px;
+                @include scrollBar;
+            }
+        }
+
+    }
+}
