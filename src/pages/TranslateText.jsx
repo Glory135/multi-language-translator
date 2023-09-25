@@ -39,14 +39,14 @@ const TranslateText = () => {
 
                 <div className="audio-btn-container">
                     <button style={{
-                        display: type === 'audio' ? 'flex' : 'none'
+                        display: type === 'text' ? 'flex' : 'none'
                     }} onClick={toggleType} className='btn small audio-btn'>
                         <Mic />
                         Audio
                     </button>
 
                     <button style={{
-                        display: type === 'text' ? 'flex' : 'none'
+                        display: type === 'audio' ? 'flex' : 'none'
                     }} onClick={toggleType} className='btn small text-btn'>
                         <Keyboard />
                         Text
