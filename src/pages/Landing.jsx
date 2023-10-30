@@ -1,11 +1,12 @@
 import { ArrowForward } from "@mui/icons-material"
 import { Link } from "react-router-dom"
 
+
 const Landing = () => {
     return (
         <div className='landing-page'>
             <div className="hero">
-                <div className="hero-text">
+                <div className="hero-text" data-aos='fade-left'>
                     <h1>Translate From Any Language</h1>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos sed nostrum veniam! Corporis totam consequatur doloremque nemo nihil voluptatibus enim.
@@ -25,7 +26,7 @@ const Landing = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="hero-img-container" />
+                <div className="hero-img-container"  data-aos='fade-right'/>
             </div>
         </div>
     )

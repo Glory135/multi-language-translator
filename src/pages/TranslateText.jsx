@@ -13,6 +13,7 @@ const TranslateText = () => {
     const toggleType = () => {
         setType(prev => prev === 'audio' ? 'text' : 'audio');
     }
+    
     const rec = () => {
         if (isRecording) {
             stopRecording()
@@ -53,12 +54,14 @@ const TranslateText = () => {
                     </button>
                 </div>
             </div>
-            <div className="translateFrom">
+            <div className="translateFrom" >
                 <div
                     style={{
                         display: type === 'text' ? 'flex' : 'none'
                     }}
-                    className="textfrom">
+                    className="textfrom"
+                    data-aos='fade-down'
+                >
                     <label htmlFor='from'>
                         <h3>
                             Enter text to be translated...
@@ -71,7 +74,9 @@ const TranslateText = () => {
                     style={{
                         display: type === 'audio' ? 'flex' : 'none',
                     }}
-                    className="audiofrom">
+                    className="audiofrom"
+                    data-aos='fade-down'
+                >
                     <div className="status">
                         {status}...
                     </div>
@@ -86,7 +91,7 @@ const TranslateText = () => {
                 </div>
 
             </div>
-            <div className="translateTo">
+            <div className="translateTo" data-aos='fade-up'>
                 <div className="toItem_comtainer">
                     <div className="toItemTop">
                         <select>
