@@ -1,3 +1,4 @@
+/* mixin for flexbox positioning */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -122,29 +123,42 @@ main.app {
   height: auto;
   position: relative;
   z-index: 4;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 main.app .top-container {
   width: 100%;
   height: 10vh;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   background-color: white;
   box-shadow: 1px 1px 2px 2px rgba(211, 211, 211, 0.307);
   border-radius: 0 0 20px 20px;
   background-color: rgba(255, 255, 255, 0.85);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
           backdrop-filter: saturate(180%) blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 main.app .top-container .top {
   width: 90%;
   height: 100%;
+  position: fixed;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: space-between;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
 }
 @media (max-width: 700px) {
   main.app .top-container .top {
@@ -155,9 +169,13 @@ main.app .top-container .top .logo-container {
   height: 100%;
   width: auto;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
 }
 main.app .top-container .top .logo-container .Link {
   height: 50%;
@@ -211,28 +229,50 @@ main.app .landing-page {
   width: 100%;
   min-height: 100vh;
   height: auto;
+  display: flex;
+  /* use flexbox for positioning */
+  align-items: center;
+  /* vertical alignment */
+  justify-content: flex-start;
+  /* horizontal alignment */
+  flex-direction: column;
+  /* direction of flex items */
 }
 main.app .landing-page .hero {
-  width: 100%;
+  width: 90%;
   height: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: row-reverse;
 }
+@media (max-width: 800px) {
+  main.app .landing-page .hero {
+    width: 95%;
+  }
+}
 @media (max-width: 700px) {
   main.app .landing-page .hero {
     display: flex;
+    /* use flexbox for positioning */
     align-items: flex-start;
+    /* vertical alignment */
     justify-content: center;
+    /* horizontal alignment */
     flex-direction: row;
+    /* direction of flex items */
+    width: 95%;
   }
 }
 main.app .landing-page .hero .hero-text {
   flex: 1;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   flex-direction: column;
 }
 @media (max-width: 700px) {
@@ -271,9 +311,13 @@ main.app .landing-page .hero .hero-text .btn-container {
 }
 main.app .landing-page .hero .hero-text .btn-container .btn {
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   gap: 10px;
 }
 main.app .landing-page .hero .hero-img-container {
@@ -288,22 +332,145 @@ main.app .landing-page .hero .hero-img-container {
     display: none;
   }
 }
+main.app .landing-page .aboutApp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+  overflow: hidden;
+  box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px 0;
+}
+main.app .landing-page .aboutApp:hover {
+  background-color: white;
+  transition: 0.3s;
+}
+main.app .landing-page .aboutApp .aboutApp-container {
+  width: 90%;
+}
+@media (max-width: 700px) {
+  main.app .landing-page .aboutApp .aboutApp-container {
+    width: 95%;
+  }
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head {
+  width: 100%;
+  font-size: 30px;
+  text-transform: capitalize;
+  color: #000000;
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head span {
+  position: relative;
+  font-size: 30px;
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head span::before, main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head span:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  border-radius: 5px;
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head span:before {
+  width: 40%;
+  top: -5px;
+  left: 0;
+  background: rgba(2, 0, 36, 0.788);
+  background: linear-gradient(94deg, #7c2bac 12%, #b292c4 100%);
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-head span:after {
+  width: 35%;
+  bottom: -5px;
+  right: 0;
+  background: rgba(2, 0, 36, 0.788);
+  background: linear-gradient(94deg, #b292c4 12%, #7c2bac 100%);
+}
+main.app .landing-page .aboutApp .aboutApp-container .aboutApp-body {
+  font-size: 17px;
+  line-height: 20px;
+  color: #a8a8a8;
+}
+main.app .landing-page .developers {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  /* use flexbox for positioning */
+  align-items: center;
+  /* vertical alignment */
+  justify-content: center;
+  /* horizontal alignment */
+  flex-direction: row;
+  /* direction of flex items */
+  overflow: hidden;
+  padding: 20px 0;
+}
+main.app .landing-page .developers .developers-container {
+  width: 90%;
+}
+@media (max-width: 700px) {
+  main.app .landing-page .developers .developers-container {
+    width: 95%;
+  }
+}
+main.app .landing-page .developers .developers-container .developers-head {
+  width: 100%;
+  font-size: 30px;
+  text-align: right;
+}
+main.app .landing-page .developers .developers-container .developers-head span {
+  position: relative;
+  font-size: 30px;
+}
+main.app .landing-page .developers .developers-container .developers-head span::before, main.app .landing-page .developers .developers-container .developers-head span:after {
+  position: absolute;
+  content: "";
+  height: 7px;
+  border-radius: 5px;
+}
+main.app .landing-page .developers .developers-container .developers-head span:before {
+  width: 40%;
+  top: -5px;
+  left: 0;
+  background: rgba(2, 0, 36, 0.788);
+  background: linear-gradient(94deg, #7c2bac 12%, #b292c4 100%);
+}
+main.app .landing-page .developers .developers-container .developers-head span:after {
+  width: 35%;
+  bottom: -5px;
+  right: 0;
+  background: rgba(2, 0, 36, 0.788);
+  background: linear-gradient(94deg, #b292c4 12%, #7c2bac 100%);
+}
+main.app .landing-page .developers .developers-container .developers-body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
 main.app .translate-text-page {
   width: 100%;
   min-height: 100vh;
   height: auto;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: flex-start;
+  /* horizontal alignment */
   flex-direction: column;
+  /* direction of flex items */
   gap: 20px;
+  margin-top: 10vh;
 }
 main.app .translate-text-page .heading {
   width: 70%;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: space-between;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   margin-top: 10px;
 }
 @media (max-width: 700px) {
@@ -352,9 +519,13 @@ main.app .translate-text-page .translateFrom {
 main.app .translate-text-page .translateFrom .textfrom {
   width: 100%;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   flex-direction: column;
 }
 main.app .translate-text-page .translateFrom .textfrom label {
@@ -412,9 +583,13 @@ main.app .translate-text-page .translateFrom .textfrom textarea:focus {
 main.app .translate-text-page .translateFrom .audiofrom {
   width: 100%;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: column;
+  /* direction of flex items */
   gap: 15px;
 }
 main.app .translate-text-page .translateFrom .audiofrom .status {
@@ -457,9 +632,13 @@ main.app .translate-text-page .translateTo .toItem_comtainer {
   flex: 1;
   height: auto;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: center;
+  /* horizontal alignment */
   flex-direction: column;
+  /* direction of flex items */
   gap: 5px;
 }
 @media (max-width: 700px) {
@@ -470,9 +649,13 @@ main.app .translate-text-page .translateTo .toItem_comtainer {
 main.app .translate-text-page .translateTo .toItem_comtainer .toItemTop {
   width: 100%;
   display: flex;
+  /* use flexbox for positioning */
   align-items: center;
+  /* vertical alignment */
   justify-content: space-between;
+  /* horizontal alignment */
   flex-direction: row;
+  /* direction of flex items */
   padding: 0 10px;
 }
 main.app .translate-text-page .translateTo .toItem_comtainer .toItemTop select {
@@ -513,4 +696,50 @@ main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-sc
 main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-corner {
   background-color: #f1f1f1;
   /* Background color of the scrollbar corner */
+}
+main.app .developerCard {
+  width: calc(25% - 30px);
+  border-radius: 0 20px 0 20px;
+  box-shadow: 0px 3px 10px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+main.app .developerCard:hover {
+  transform: translateY(-20px);
+  transition: 0.3 ease-in-out;
+}
+@media (max-width: 800px) {
+  main.app .developerCard {
+    width: calc(50% - 10px);
+  }
+}
+@media (max-width: 700px) {
+  main.app .developerCard {
+    width: 100%;
+  }
+}
+main.app .developerCard .detailsCan {
+  padding: 0 15px;
+}
+main.app .developerCard .detailsCan .detaillist {
+  padding: 0;
+  list-style-type: none;
+  margin: 5px 0;
+}
+main.app .developerCard .detailsCan .detaillist .liTitle {
+  font-weight: bold;
+  color: #240a20;
+}
+main.app footer {
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  background-color: #7c2bac;
+  display: flex;
+  /* use flexbox for positioning */
+  align-items: center;
+  /* vertical alignment */
+  justify-content: center;
+  /* horizontal alignment */
+  flex-direction: row;
+  /* direction of flex items */
 }/*# sourceMappingURL=App.css.map */

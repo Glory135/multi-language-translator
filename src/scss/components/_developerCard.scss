@@ -1,0 +1,33 @@
+& .developerCard {
+    width: calc((100% / 4) - 30px);
+    border-radius: 0 20px 0 20px;
+    box-shadow: $shadow;
+    margin: 10px 0;
+
+    &:hover{
+        transform: translateY(-20px);
+        transition: 0.3 ease-in-out;
+    }
+
+    @include md {
+        width: calc((100% / 2) - 10px);
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    & .detailsCan {
+        padding: 0 15px;
+        & .detaillist {
+            padding: 0;
+            list-style-type: none;
+            margin: 5px 0;
+
+            & .liTitle {
+                font-weight: bold;
+                color: $dark_primary
+            }
+        }
+    }
+}

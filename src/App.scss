@@ -94,7 +94,7 @@ main.app {
 	height: auto;
 	position: relative;
 	z-index: 4;
-	overflow-x: hidden;
+	overflow: hidden;
 
 	& .top-container {
 		width: 100%;
@@ -105,13 +105,21 @@ main.app {
 		border-radius: 0 0 20px 20px;
 		background-color: rgba(255, 255, 255, 0.85);
 		backdrop-filter: saturate(180%) blur(10px);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
 
 		// component
 		@import './scss/components/topbar';
+
 	}
 
 	// pages
 	@import './scss/pages/landing';
 	@import './scss/pages/textTranslate';
 
+	// components
+	@import './scss/components/developerCard';
+	@import './scss/components/footer';
 }

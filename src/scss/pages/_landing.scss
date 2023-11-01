@@ -2,22 +2,30 @@
     width: 100%;
     min-height: 100vh;
     height: auto;
+    @include position(center, flex-start, column);
 
     & .hero {
-        width: 100%;
+        width: 90%;
         height: auto;
         min-height: 100vh;
         display: flex;
         flex-direction: row-reverse;
-        @include sm{
-            @include position(flex-start, center, row)
+
+        @include md {
+            // @include position(flex-start, center, row);
+            width: 95%;
+        }
+        @include sm {
+            @include position(flex-start, center, row);
+            width: 95%;
         }
 
         & .hero-text {
             flex: 1;
             @include position;
             flex-direction: column;
-            @include sm{
+
+            @include sm {
                 padding: 5px;
                 margin-top: 30px;
             }
@@ -25,7 +33,8 @@
             & h1 {
                 font-size: 40px;
                 @include text-gradient;
-                @include sm{
+
+                @include sm {
                     font-size: 30px;
                 }
             }
@@ -36,15 +45,17 @@
                 line-height: 20px;
                 font-weight: lighter;
                 color: $light_text;
-                @include sm{
+
+                @include sm {
                     font-size: 15px;
                 }
             }
 
-            & .btn-container{
+            & .btn-container {
                 margin-top: 15px;
                 width: 100%;
-                & .btn{
+
+                & .btn {
                     @include position;
                     gap: 10px;
                 }
@@ -60,6 +71,81 @@
 
             @include sm {
                 display: none;
+            }
+        }
+    }
+
+    & .aboutApp {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        // background-color: white;
+        opacity: 0.8;
+        overflow: hidden;
+        box-shadow: $shadow;
+        padding: 50px 0;
+
+        &:hover {
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        & .aboutApp-container {
+            width: 90%;
+
+            @include sm {
+                width: 95%;
+            }
+
+            & .aboutApp-head {
+                width: 100%;
+                font-size: 30px;
+                // text-align: center;
+                text-transform: capitalize;
+                color: $text;
+
+                & span{
+                    @include section-head-design(40%, 35%)
+                }   
+            }
+            & .aboutApp-body {
+                font-size: 17px;
+                line-height: 20px;
+                // text-align: center;
+                color: $light_text;
+            }
+        }
+    }
+
+    & .developers {
+        width: 100%;
+        margin: 40px 0;
+        @include position;
+        overflow: hidden;
+        padding: 20px 0;
+
+        & .developers-container {
+            width: 90%;
+
+            @include sm {
+                width: 95%;
+            }
+
+            & .developers-head {
+                width: 100%;
+                font-size: 30px;
+                text-align: right;
+                & span{
+                    @include section-head-design(40%, 35%)
+                }
+            }
+
+            & .developers-body {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 10px;
             }
         }
     }

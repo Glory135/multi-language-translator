@@ -4,6 +4,7 @@ import Topbar from './components/Topbar'
 import { useEffect } from 'react'
 import Aos from "aos"
 import "aos/dist/aos.css";
+import Footer from './components/Footer'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Topbar />
         </div>
         <Outlet />
+        <Footer />
       </main>
     </>
   )
