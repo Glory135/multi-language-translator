@@ -44,7 +44,7 @@ const Landing = () => {
                 <div className="developers-container">
                     <h3 className="developers-head" data-aos='fade-left'>
                         <span >
-                            Meet The Developers
+                            Meet Team Alpha
                         </span>
                     </h3>
                     <div className="developers-body" >
