@@ -142,15 +142,10 @@ main.app .top-container {
   background-color: rgba(255, 255, 255, 0.85);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
           backdrop-filter: saturate(180%) blur(10px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
 }
 main.app .top-container .top {
   width: 90%;
   height: 100%;
-  position: fixed;
   display: flex;
   /* use flexbox for positioning */
   align-items: center;
@@ -459,7 +454,6 @@ main.app .translate-text-page {
   flex-direction: column;
   /* direction of flex items */
   gap: 20px;
-  margin-top: 10vh;
 }
 main.app .translate-text-page .heading {
   width: 70%;

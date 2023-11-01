@@ -1,7 +1,6 @@
 & .top {
     width: 90%;
     height: 100%;
-    position: fixed;
     @include position(center, space-between);
     @include sm{
         width: 85%;
