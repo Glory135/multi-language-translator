@@ -3,5 +3,52 @@
     padding: 20px 0;
     color: white;
     background-color: $primary;
+    margin-top: 50px;
     @include position;
+
+    & .footer-container{
+        width: 90%;
+
+        @include sm{
+            width: 95%;
+        }
+
+        & .footer-first-con{
+            display: flex;
+            margin: 20px 0;
+
+            & .footer-first{
+                flex: 1;
+                & img{
+                    height: 5vh;
+                    width: auto;
+
+                    @include sm{
+                        height: 4vh;
+                    }
+                }
+            }
+            & .footer-sec{
+                flex: 1;
+                @include position(center, flex-end);
+                & a{
+                    padding: 5px;
+                    text-decoration: none;
+                    color: white;
+                    border-radius: 50%;
+                    background-color: $secondary;
+                    animation: toTopAnimation 1s  infinite;
+
+                    &:hover{
+                        cursor: pointer;
+                        animation-play-state: paused;
+                    }
+                }
+            }
+        }
+        & .footer-second-con{
+            text-align: center;
+            font-size: 18px;
+        }
+    }
 }

@@ -6,7 +6,7 @@ import { SignLanguage } from '@mui/icons-material';
 
 const Topbar = () => {
     return (
-        <div className='top'>
+        <div className='top' id='topBar'>
             <div className="logo-container">
                 <Link className='Link' to={'/'}>
                     <img className='logo' src={logo} alt="logo" />

@@ -37,6 +37,17 @@
     transform: scale(1);
   }
 }
+@keyframes toTopAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.3);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 *,
 *::before,
 *::after {
@@ -728,6 +739,7 @@ main.app footer {
   padding: 20px 0;
   color: white;
   background-color: #7c2bac;
+  margin-top: 50px;
   display: flex;
   /* use flexbox for positioning */
   align-items: center;
@@ -736,4 +748,55 @@ main.app footer {
   /* horizontal alignment */
   flex-direction: row;
   /* direction of flex items */
+}
+main.app footer .footer-container {
+  width: 90%;
+}
+@media (max-width: 700px) {
+  main.app footer .footer-container {
+    width: 95%;
+  }
+}
+main.app footer .footer-container .footer-first-con {
+  display: flex;
+  margin: 20px 0;
+}
+main.app footer .footer-container .footer-first-con .footer-first {
+  flex: 1;
+}
+main.app footer .footer-container .footer-first-con .footer-first img {
+  height: 5vh;
+  width: auto;
+}
+@media (max-width: 700px) {
+  main.app footer .footer-container .footer-first-con .footer-first img {
+    height: 4vh;
+  }
+}
+main.app footer .footer-container .footer-first-con .footer-sec {
+  flex: 1;
+  display: flex;
+  /* use flexbox for positioning */
+  align-items: center;
+  /* vertical alignment */
+  justify-content: flex-end;
+  /* horizontal alignment */
+  flex-direction: row;
+  /* direction of flex items */
+}
+main.app footer .footer-container .footer-first-con .footer-sec a {
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  border-radius: 50%;
+  background-color: rgb(255, 103, 47);
+  animation: toTopAnimation 1s infinite;
+}
+main.app footer .footer-container .footer-first-con .footer-sec a:hover {
+  cursor: pointer;
+  animation-play-state: paused;
+}
+main.app footer .footer-container .footer-second-con {
+  text-align: center;
+  font-size: 18px;
 }/*# sourceMappingURL=App.css.map */
