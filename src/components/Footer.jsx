@@ -3,7 +3,7 @@ import logo from '../assets/logo-main2.svg'
 
 const Footer = () => {
     return (
-        <footer >
+        <footer>
             <div className="footer-container">
                 <div className="footer-first-con">
                 <div className='footer-first'>

@@ -5,6 +5,7 @@
     background-color: $primary;
     margin-top: 50px;
     @include position;
+    box-shadow: $shadow;
 
     & .footer-container{
         width: 90%;
