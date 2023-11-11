@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import randoGuy from '../assets/rando.jpeg'
 import gloryimg from '../assets/profileimgs/glory.png'
 import praiseimg from '../assets/profileimgs/praise.jpg'
+import veraimg from '../assets/profileimgs/vera.jpg'
+import charlesimg from '../assets/profileimgs/charles.jpg'
 import DeveloperCard from "../components/DeveloperCard"
 
 
@@ -60,25 +62,25 @@ const Landing = () => {
                             linkedin='http://linkedin.com/in/praiseolawoore/'
                         />
                         <DeveloperCard
+                            img={veraimg}
+                            name='Magbuwe Vera'
+                            role='Technical writer and researcher'
+                            milestone='Alpa'
+                            github='https://github.com/veratinous'
+                            mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/e6eaa8cf-44e1-4885-ba1d-2f1f5ad78c28'
+                            linkedin='https://www.linkedin.com/in/vera-magbuwe-b60a4423b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+                        />
+                        <DeveloperCard
+                            img={charlesimg}
+                            name='Charles Edeki'
+                            role='Backend Developer'
+                            milestone='Alpa'
+                            github='https://github.com/CharlesEdeki'
+                            mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/403fa414-e188-4966-890a-f817973c60d0'
+                            linkedin='https://www.linkedin.com/in/charles-edeki-364a0120a'
+                        />
+                        <DeveloperCard
                             img={gloryimg}
-                            name='Adeyemi Glory'
-                            role='Frontend Developer'
-                            milestone='Alpa'
-                            github='https://github.com/Glory135'
-                            mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/3400548d-5279-47ff-8260-fa6b744dbbc9'
-                            linkedin='http://linkedin.com/in/glory135'
-                        />
-                        <DeveloperCard
-                            img={randoGuy}
-                            name='Adeyemi Glory'
-                            role='Frontend Developer'
-                            milestone='Alpa'
-                            github='https://github.com/Glory135'
-                            mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/3400548d-5279-47ff-8260-fa6b744dbbc9'
-                            linkedin='http://linkedin.com/in/glory135'
-                        />
-                        <DeveloperCard
-                            img={randoGuy}
                             name='Adeyemi Glory'
                             role='Frontend Developer'
                             milestone='Alpa'
