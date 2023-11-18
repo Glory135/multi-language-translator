@@ -12,13 +12,19 @@
         margin-top: 10px;
 
         @include sm {
+            flex-direction: column-reverse;
             width: 90%;
+            gap: 10px;
         }
 
         & .first {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
+
+            @include sm {
+                width: 100%;
+            }
 
             & .text {
                 font-size: 20px;
@@ -32,6 +38,9 @@
 
 
         & .audio-btn-container {
+            @include sm {
+                width: 100%;
+            }
 
             & .audio-btn,
             .text-btn {
@@ -44,6 +53,12 @@
                 }
 
                 @include clickScale;
+
+                @include sm {
+                    padding: 15px 0;
+                    @include position;
+                    width: 100%;
+                }
             }
 
             & .text-btn {
@@ -180,5 +195,11 @@
             }
         }
 
+    }
+
+    & .autoComplete {
+        @include sm {
+            width: 100%;
+        }
     }
 }

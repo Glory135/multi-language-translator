@@ -70,6 +70,10 @@ body {
   text-decoration: none;
 }
 
+.error {
+  color: red;
+}
+
 button {
   background-color: rgb(255, 103, 47);
   font-weight: bold;
@@ -480,13 +484,20 @@ main.app .translate-text-page .heading {
 }
 @media (max-width: 700px) {
   main.app .translate-text-page .heading {
+    flex-direction: column-reverse;
     width: 90%;
+    gap: 10px;
   }
 }
 main.app .translate-text-page .heading .first {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .heading .first {
+    width: 100%;
+  }
 }
 main.app .translate-text-page .heading .first .text {
   font-size: 20px;
@@ -498,6 +509,11 @@ main.app .translate-text-page .heading .first .text {
 @media (max-width: 700px) {
   main.app .translate-text-page .heading .first .text {
     font-size: 17px;
+  }
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .heading .audio-btn-container {
+    width: 100%;
   }
 }
 main.app .translate-text-page .heading .audio-btn-container .audio-btn,
@@ -514,6 +530,21 @@ main.app .translate-text-page .heading .audio-btn-container .audio-btn:active,
 main.app .translate-text-page .heading .audio-btn-container .text-btn:active {
   transform: scale(0.9);
   transition: 0.1s;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .heading .audio-btn-container .audio-btn,
+  main.app .translate-text-page .heading .audio-btn-container .text-btn {
+    padding: 15px 0;
+    display: flex;
+    /* use flexbox for positioning */
+    align-items: center;
+    /* vertical alignment */
+    justify-content: center;
+    /* horizontal alignment */
+    flex-direction: row;
+    /* direction of flex items */
+    width: 100%;
+  }
 }
 main.app .translate-text-page .heading .audio-btn-container .text-btn {
   background-color: #7c2bac;
@@ -701,6 +732,11 @@ main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-sc
 main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-corner {
   background-color: #f1f1f1;
   /* Background color of the scrollbar corner */
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .autoComplete {
+    width: 100%;
+  }
 }
 main.app .developerCard {
   width: calc(25% - 30px);
