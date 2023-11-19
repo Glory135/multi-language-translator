@@ -1,9 +1,10 @@
-import { Keyboard, Mic, VolumeUp } from '@mui/icons-material';
+import { Keyboard, Mic } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { useReactMediaRecorder } from 'react-media-recorder';
 import SelectLanguage from '../components/SelectLanguage';
 import { useQuery } from '@tanstack/react-query';
 import { getLanguages } from '../utinFunctions';
+// import loadingani from '../assets/loading.gif';
 
 const TranslateText = () => {
 	const [type, setType] = useState('text');
@@ -60,13 +61,14 @@ const TranslateText = () => {
 					defaultSelectedLan={lan}
 				/>
 			);
-		} else if (isLoading) return <p>loading languages...</p>;
-		else {
+		} else if (isLoading) {
+			return <p>Loading languages...</p>;
+		} else {
 			return (
 				<p className='error'>
 					ERROR!! smething happened while loading languages
 				</p>
-			);
+			); 
 		}
 	};
 
@@ -155,7 +157,7 @@ const TranslateText = () => {
 				<div className='toItem_comtainer'>
 					<div className='toItemTop'>
 						{loadLanguages(
-							'french',
+							'japanese',
 							selectedToLan2,
 							setSelectedToLan2
 						)}
@@ -165,7 +167,7 @@ const TranslateText = () => {
 				<div className='toItem_comtainer'>
 					<div className='toItemTop'>
 						{loadLanguages(
-							'chinese simplified',
+							'german',
 							selectedToLan3,
 							setSelectedToLan3
 						)}

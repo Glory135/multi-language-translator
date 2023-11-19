@@ -73,7 +73,7 @@ const Landing = () => {
 							img={charlesimg}
 							name='Charles Edeki'
 							role='Backend Developer'
-							milestone='Alpa'
+							milestone='Beta'
 							github='https://github.com/CharlesEdeki'
 							mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/403fa414-e188-4966-890a-f817973c60d0'
 							linkedin='https://www.linkedin.com/in/charles-edeki-364a0120a'
