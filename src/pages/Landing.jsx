@@ -64,7 +64,7 @@ const Landing = () => {
 							img={veraimg}
 							name='Magbuwe Vera'
 							role='Technical writer and researcher'
-							milestone='Alpa'
+							milestone='Alpha'
 							github='https://github.com/veratinous'
 							mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/e6eaa8cf-44e1-4885-ba1d-2f1f5ad78c28'
 							linkedin='https://www.linkedin.com/in/vera-magbuwe-b60a4423b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
@@ -82,7 +82,7 @@ const Landing = () => {
 							img={gloryimg}
 							name='Adeyemi Glory'
 							role='Frontend Developer'
-							milestone='Alpa'
+							milestone='Alpha'
 							github='https://github.com/Glory135'
 							mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/3400548d-5279-47ff-8260-fa6b744dbbc9'
 							linkedin='http://linkedin.com/in/glory135'
