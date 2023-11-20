@@ -616,6 +616,21 @@ main.app .translate-text-page .translateFrom .textfrom textarea::-webkit-scrollb
 main.app .translate-text-page .translateFrom .textfrom textarea:focus {
   outline: none;
 }
+main.app .translate-text-page .translateFrom .textfrom .transBtn {
+  width: 50%;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+@media (max-width: 700px) {
+  main.app .translate-text-page .translateFrom .textfrom .transBtn {
+    width: 90%;
+  }
+}
+main.app .translate-text-page .translateFrom .textfrom .transBtn:disabled {
+  background-color: lightgrey;
+  color: grey;
+  cursor: not-allowed;
+}
 main.app .translate-text-page .translateFrom .audiofrom {
   width: 100%;
   display: flex;
@@ -732,6 +747,22 @@ main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-sc
 main.app .translate-text-page .translateTo .toItem_comtainer .toItem::-webkit-scrollbar-corner {
   background-color: #f1f1f1;
   /* Background color of the scrollbar corner */
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem .loadingimgcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* use flexbox for positioning */
+  align-items: center;
+  /* vertical alignment */
+  justify-content: center;
+  /* horizontal alignment */
+  flex-direction: row;
+  /* direction of flex items */
+}
+main.app .translate-text-page .translateTo .toItem_comtainer .toItem .loadingimgcon img {
+  width: 50px;
+  height: 50px;
 }
 @media (max-width: 700px) {
   main.app .translate-text-page .autoComplete {

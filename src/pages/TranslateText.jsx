@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 import { useReactMediaRecorder } from 'react-media-recorder';
 import SelectLanguage from '../components/SelectLanguage';
 import { useQuery } from '@tanstack/react-query';
-import { getLanguages } from '../utinFunctions';
-// import loadingani from '../assets/loading.gif';
+import {
+	getLanguages,
+	recognize_speech,
+	text_translate,
+} from '../utinFunctions';
+import loadingani from '../assets/loading.gif';
 
 const TranslateText = () => {
 	const [type, setType] = useState('text');
+	const [fromText, setFromText] = useState('');
 	const [isRecording, setIsRecording] = useState(false);
 	const [selectedFromLan, setSelectedFromLan] = useState({
 		label: '',
@@ -25,6 +30,10 @@ const TranslateText = () => {
 		label: '',
 		code: '',
 	});
+	const [toText1, setToText1] = useState('');
+	const [toText2, setToText2] = useState('');
+	const [toText3, setToText3] = useState('');
+	const [loadingText, seLoadingText] = useState(false);
 
 	const { status, startRecording, stopRecording, mediaBlobUrl } =
 		useReactMediaRecorder({ audio: true });
@@ -68,8 +77,27 @@ const TranslateText = () => {
 				<p className='error'>
 					ERROR!! smething happened while loading languages
 				</p>
-			); 
+			);
 		}
+	};
+
+	const handleSubmit = async () => {
+		seLoadingText(true);
+		const bodyGen = (to) => {
+			return {
+				text: fromText,
+				source_language: selectedFromLan.code,
+				target_language: to,
+			};
+		};
+
+		const to1 = await text_translate(bodyGen(selectedToLan1.code));
+		const to2 = await text_translate(bodyGen(selectedToLan2.code));
+		const to3 = await text_translate(bodyGen(selectedToLan3.code));
+		setToText1(to1);
+		setToText2(to2);
+		setToText3(to3);
+		seLoadingText(false);
 	};
 
 	return (
@@ -120,7 +148,17 @@ const TranslateText = () => {
 					<label htmlFor='from'>
 						<h3>Enter text to be translated...</h3>
 					</label>
-					<textarea id='from' name='from'></textarea>
+					<textarea
+						value={fromText}
+						onChange={(e) => setFromText(e.target.value)}
+						id='from'
+						name='from'></textarea>
+					<button
+						disabled={loadingText}
+						className='transBtn'
+						onClick={() => handleSubmit()}>
+						Translate
+					</button>
 				</div>
 
 				<div
@@ -151,7 +189,15 @@ const TranslateText = () => {
 							setSelectedToLan1
 						)}
 					</div>
-					<div className='toItem item1'></div>
+					<div className='toItem item1'>
+						{loadingText ? (
+							<div className='loadingimgcon'>
+								<img src={loadingani} alt='loading' />
+							</div>
+						) : (
+							toText1
+						)}
+					</div>
 				</div>
 
 				<div className='toItem_comtainer'>
@@ -162,7 +208,15 @@ const TranslateText = () => {
 							setSelectedToLan2
 						)}
 					</div>{' '}
-					<div className='toItem item2'></div>
+					<div className='toItem item2'>
+						{loadingText ? (
+							<div className='loadingimgcon'>
+								<img src={loadingani} alt='loading' />
+							</div>
+						) : (
+							toText2
+						)}
+					</div>
 				</div>
 				<div className='toItem_comtainer'>
 					<div className='toItemTop'>
@@ -172,7 +226,15 @@ const TranslateText = () => {
 							setSelectedToLan3
 						)}
 					</div>
-					<div className='toItem item3'></div>
+					<div className='toItem item3'>
+						{loadingText ? (
+							<div className='loadingimgcon'>
+								<img src={loadingani} alt='loading' />
+							</div>
+						) : (
+							toText3
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
