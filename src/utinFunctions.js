@@ -27,6 +27,6 @@ export const text_translate = async (body) => {
 
 export const recognize_speech = async (body) => {
     const res = await axios.post(`${BASE_URL}/recognize-speech`, body, { mode: 'cors' })
-    console.log(res);
+    return res
 }
 

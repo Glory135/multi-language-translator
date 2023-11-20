@@ -55,7 +55,7 @@ const Landing = () => {
 							img={praiseimg}
 							name='Praise Olawoore'
 							role=' Project Manager'
-							milestone='Beta'
+							milestone='Alpha'
 							github='https://github.com/praistarr'
 							mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/7ef0ee6e-de25-4f40-8d49-d2bd929804ef'
 							linkedin='http://linkedin.com/in/praiseolawoore/'
@@ -73,7 +73,7 @@ const Landing = () => {
 							img={charlesimg}
 							name='Charles Edeki'
 							role='Backend Developer'
-							milestone='Beta'
+							milestone='Alpha'
 							github='https://github.com/CharlesEdeki'
 							mlsa='https://mvp.microsoft.com/en-US/studentambassadors/profile/403fa414-e188-4966-890a-f817973c60d0'
 							linkedin='https://www.linkedin.com/in/charles-edeki-364a0120a'
